@@ -1,4 +1,4 @@
-```javascript
+
 // Function that creates and displays a dictionary value
 function my_Dictionary() {
 
@@ -17,4 +17,4 @@ function my_Dictionary() {
     document.getElementById("Dictionary").innerHTML =
         Animal.Species;
 }
-```
+
