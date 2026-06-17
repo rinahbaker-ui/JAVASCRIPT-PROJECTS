@@ -1,38 +1,51 @@
+// Function that uses a ternary operator and browser input
+function Age_Function() {
 
-// Create a variable and display its data type
-var age = 25;
-document.write("The data type of age is: " + typeof age);
-document.write("<br><br>");
+    // Get the value entered by the user
+    var Age = document.getElementById("Age").value;
 
-// Combine a string and a number
-document.write("My age is " + 25);
-document.write("<br><br>");
+    // Use a ternary operation to determine voting eligibility
+    var Vote = (Age < 18) ? "You are too young to vote." : "You are old enough to vote.";
 
-// Use the == operator
-document.write("10 == '10': " + (10 == "10"));
-document.write("<br>");
+    // Display the result
+    document.getElementById("Vote").innerHTML = Vote;
+}
 
-// Use the === operator
-document.write("10 === '10': " + (10 === "10"));
-document.write("<br>");
+// Constructor function using the "this" keyword
+function Vehicle(Make, Model, Year) {
 
-// Use the > operator
-document.write("10 > 5: " + (10 > 5));
-document.write("<br>");
+    // Assign values to object properties
+    this.Vehicle_Make = Make;
+    this.Vehicle_Model = Model;
+    this.Vehicle_Year = Year;
+}
 
-// Use the < operator
-document.write("5 < 10: " + (5 < 10));
-document.write("<br>");
+// Create a new object using the "new" keyword
+var Barbara = new Vehicle("Ford", "Mustang", "2024");
 
-// Use the && operator
-document.write("(10 > 5 && 5 < 10): " + (10 > 5 && 5 < 10));
-document.write("<br>");
+// Function to display the constructor object
+function myFunction() {
 
-// Use the || operator
-document.write("(10 > 20 || 5 < 10): " + (10 > 20 || 5 < 10));
-document.write("<br>");
+    // Display object information in an HTML element
+    document.getElementById("Keywords_and_Constructors").innerHTML =
+        "Barbara drives a " + Barbara.Vehicle_Year + " " +
+        Barbara.Vehicle_Make + " " + Barbara.Vehicle_Model + ".";
+}
 
-// Use the ! operator
-document.write("!(10 > 5): " + !(10 > 5));
-document.write("<br>");
+// Function containing a nested function
+function count_Function() {
 
+    // Variable for counting
+    var Starting_point = 9;
+
+    // Nested function
+    function Plus_one() {
+        Starting_point += 1;
+    }
+
+    // Call the nested function
+    Plus_one();
+
+    // Display the result
+    document.getElementById("Counting").innerHTML = Starting_point;
+}
