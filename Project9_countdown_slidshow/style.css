@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.slideshow-container {
+    max-width: 600px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    height: 350px;
+    object-fit: cover;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}

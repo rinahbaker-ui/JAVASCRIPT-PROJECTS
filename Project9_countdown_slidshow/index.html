@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown and Slideshow</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/main.js" defer></script>
+</head>
+<body>
+
+    <h1>Countdown Timer</h1>
+
+    <p>How many seconds would you like to set your alarm for?</p>
+    <input id="seconds" value="">
+    <button onclick="countdown()">Click Here</button>
+
+    <p id="timer"></p>
+
+    <hr>
+
+    <h1>Basic Slideshow</h1>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="Images/car1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="Images/car2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="Images/car3.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+
+</body>
+</html>
