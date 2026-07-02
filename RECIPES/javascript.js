@@ -14,6 +14,11 @@ for (var i = 0; i < btns.length; i++) {
     btns[i].onclick = function (event) {
         modal = document.querySelector(event.target.getAttribute ("href"));
         modal.style.display = "block";
+        function closeModal() {
+    modal.style.display = "none";
+}
+
+setTimeout(closeModal, 10000);
     }
 }
 
