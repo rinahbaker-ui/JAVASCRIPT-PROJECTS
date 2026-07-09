@@ -1,90 +1,204 @@
+/* Imports the Raleway font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+/* Defines global CSS variables */
 :root {
+
+  /* Creates a variable for the main font */
   --main-font: 'Raleway', sans-serif;
 }
 
+/* Selects the h1 and p elements */
 h1,
+
+/* Continues selecting the p element */
 p {
+
+/* Centers the text */
   text-align: center;
+
+  /* Applies the main font variable */
   font-family: var(--main-font);
+
+  /* Sets the font size */
   font-size: 2rem;
+
+  /* Sets the text color */
   color: rgb(46, 46, 46);
 }
 
+/* Selects all paragraph elements */
 p {
+
+  /* Makes the paragraph text bold */
   font-weight: 800;
+
+  /* Sets the paragraph font size */
   font-size: 1.5rem;
+
+  /* Aligns items to the center */
   align-items: center;
 }
 
+/* Selects the element with the ID of tkuMsg */
 #tkuMsg {
+
+  /* Adds space above the element */
   margin-top: 45px;
 }
 
+/* Selects the container class */
 .container {
+
+  /* Displays the container as an inline flexbox */
   display: inline-flexbox;
+
+  /* Adds space above the container */
   margin-top: 15%;
+
+  /* Centers the container from the left */
   margin-left: auto;
+
+  /* Centers the container from the right */
   margin-right: auto;
+
+  /* Adds padding inside the container */
   padding: 60px 40px 90px;
+
+  /* Adds a shadow around the container */
   box-shadow: 0px 0px 15px 3px rgba(76, 28, 0, 0.15);
+
+  /* Rounds the corners */
   border-radius: 10px;
+
+  /* Removes the border */
   border: none;
+
+  /* Sets the width of the container */
   width: 50%;
 }
 
+/* Selects the display class */
 .display {
+
+  /* Displays the element inline */
   display: inline;
 }
 
+/* Selects the form element */
 form {
+
+  /* Centers the form contents */
   text-align: center;
+
+  /* Adds padding inside the form */
   padding: 20px;
 }
 
+/* Selects all input elements inside the form */
 form input {
+
+  /* Applies the main font */
   font-family: var(--main-font);
+
+  /* Sets the font size */
   font-size: 15px;
+
+  /* Sets the text color */
   color: rgb(165, 165, 165);
+
+  /* Adds a border */
   border: 2px solid rgb(165, 165, 165);
+
+  /* Rounds the corners */
   border-radius: 5px;
+
+  /* Adds padding inside the inputs */
   padding: 8px;
+
+  /* Adds horizontal margins */
   margin: 0px 3px;
+
+  /* Creates a smooth transition effect */
   transition: 0.3s ease-out;
 }
 
+/* Begins a media query for screens 900px wide or smaller */
 @media (max-width: 900px) {
+
+  /* Selects form input elements */
   form input {
+
+    /* Displays each input on its own line */
     display: block;
+
+    /* Centers the inputs with vertical spacing */
     margin: 15px auto;
+
+    /* Increases the padding */
     padding: 10px;
   }
 }
 
-
+/* Styles the input field when it receives focus */
 form input:focus {
+
+  /* Changes the border color */
   border: 2px solid #ff9100;
+
+  /* Changes the text color */
   color: black;
+
+  /* Removes the default outline */
   outline: none;
+
+  /* Keeps the smooth transition */
   transition: 0.3s ease-out;
 }
 
+/* Selects elements with the btn class */
 .btn {
+
+  /* Sets the background color */
   background-color: rgb(46, 46, 46);
+
+  /* Removes the border */
   border: none;
+
+  /* Adds a bottom border */
   border-bottom: 3px solid rgb(77, 77, 77);
+
+  /* Rounds the button corners */
   border-radius: 5px;
+
+  /* Applies the main font */
   font-family: var(--main-font);
+
+  /* Sets the font size */
   font-size: 18px;
+
+  /* Makes the text bold */
   font-weight: bold;
+
+  /* Adds padding inside the button */
   padding: 8px 30px 6px;
+
+  /* Centers the text */
   text-align: center;
+
+  /* Sets the text color */
   color: #fff;
+
+  /* Changes the mouse cursor to a pointer */
   cursor: pointer;
 }
 
+/* Styles the button when the mouse hovers over it */
 .btn:hover {
+
+  /* Changes the background color */
   background-color: rgb(77, 77, 77);
+
+  /* Changes the bottom border color */
   border-bottom: 3px solid #ff9100;
 }
