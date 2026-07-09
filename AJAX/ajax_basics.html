@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basic AJAX Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container" id="content">
+        <h1>Sign up for our Newsletter</h1>
+
+        <div class="display">
+            <form>
+                <input id="fullName" placeholder="Name">
+                <input placeholder="Email">
+                <input type="button" class="btn" value="Submit" onclick="getMsg();">
+                <input type="button" class="btn" value="Load AJAX Message" onclick="loadContent();">
+            </form>
+
+            <p id="demo">Click the button to load new content.</p>
+        </div>
+    </div>
+
+    <script>
+        function loadContent() {
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+
+            xhttp.open("GET", "content.html", true);
+            xhttp.send();
+        }
+
+        function getMsg() {
+            alert("Thank you for signing up!");
+        }
+    </script>
+</body>
+
+</html>
