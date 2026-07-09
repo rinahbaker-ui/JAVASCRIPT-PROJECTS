@@ -1,204 +1,92 @@
-/* Imports the Raleway font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+<!DOCTYPE html>
 
-/* Defines global CSS variables */
-:root {
+<!-- Defines the document as an HTML5 document -->
+<html lang="en">
 
-  /* Creates a variable for the main font */
-  --main-font: 'Raleway', sans-serif;
-}
+<head>
 
-/* Selects the h1 and p elements */
-h1,
+    <!-- Sets the character encoding to UTF-8 -->
+    <meta charset="utf-8">
 
-/* Continues selecting the p element */
-p {
+    <!-- Sets the title shown in the browser tab -->
+    <title>Basic AJAX Demo</title>
 
-/* Centers the text */
-  text-align: center;
+    <!-- Connects the external CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
-  /* Applies the main font variable */
-  font-family: var(--main-font);
+</head>
 
-  /* Sets the font size */
-  font-size: 2rem;
+<body>
 
-  /* Sets the text color */
-  color: rgb(46, 46, 46);
-}
+    <!-- Main container for the page content -->
+    <div class="container" id="content">
 
-/* Selects all paragraph elements */
-p {
+        <!-- Main page heading -->
+        <h1>Sign up for our Newsletter</h1>
 
-  /* Makes the paragraph text bold */
-  font-weight: 800;
+        <!-- Container for the form -->
+        <div class="display">
 
-  /* Sets the paragraph font size */
-  font-size: 1.5rem;
+            <!-- Begins the newsletter form -->
+            <form>
 
-  /* Aligns items to the center */
-  align-items: center;
-}
+                <!-- Text box for the user's name -->
+                <input id="fullName" placeholder="Name">
 
-/* Selects the element with the ID of tkuMsg */
-#tkuMsg {
+                <!-- Text box for the user's email -->
+                <input placeholder="Email">
 
-  /* Adds space above the element */
-  margin-top: 45px;
-}
+                <!-- Button that displays a thank-you message -->
+                <input type="button" class="btn" value="Submit" onclick="getMsg();">
 
-/* Selects the container class */
-.container {
+                <!-- Button that loads content using AJAX -->
+                <input type="button" class="btn" value="Load AJAX Message" onclick="loadContent();">
 
-  /* Displays the container as an inline flexbox */
-  display: inline-flexbox;
+            </form>
 
-  /* Adds space above the container */
-  margin-top: 15%;
+            <!-- Paragraph where the AJAX content will be displayed -->
+            <p id="demo">Click the button to load new content.</p>
 
-  /* Centers the container from the left */
-  margin-left: auto;
+        </div>
 
-  /* Centers the container from the right */
-  margin-right: auto;
+    </div>
 
-  /* Adds padding inside the container */
-  padding: 60px 40px 90px;
+    <!-- Begins the JavaScript section -->
+    <script>
 
-  /* Adds a shadow around the container */
-  box-shadow: 0px 0px 15px 3px rgba(76, 28, 0, 0.15);
+        // Creates a function that loads content from another HTML file
+        function loadContent() {
 
-  /* Rounds the corners */
-  border-radius: 10px;
+            // Creates a new XMLHttpRequest object
+            var xhttp = new XMLHttpRequest();
 
-  /* Removes the border */
-  border: none;
+            // Runs whenever the request changes state
+            xhttp.onreadystatechange = function () {
 
-  /* Sets the width of the container */
-  width: 50%;
-}
+                // Checks if the request is complete and successful
+                if (this.readyState == 4 && this.status == 200) {
 
-/* Selects the display class */
-.display {
+                    // Replaces the paragraph with the content from content.html
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
 
-  /* Displays the element inline */
-  display: inline;
-}
+            // Opens a connection to the content.html file
+            xhttp.open("GET", "content.html", true);
 
-/* Selects the form element */
-form {
+            // Sends the AJAX request
+            xhttp.send();
+        }
 
-  /* Centers the form contents */
-  text-align: center;
+        // Creates a function that displays a thank-you message
+        function getMsg() {
 
-  /* Adds padding inside the form */
-  padding: 20px;
-}
+            // Shows an alert box when the Submit button is clicked
+            alert("Thank you for signing up!");
+        }
 
-/* Selects all input elements inside the form */
-form input {
+    </script>
 
-  /* Applies the main font */
-  font-family: var(--main-font);
+</body>
 
-  /* Sets the font size */
-  font-size: 15px;
-
-  /* Sets the text color */
-  color: rgb(165, 165, 165);
-
-  /* Adds a border */
-  border: 2px solid rgb(165, 165, 165);
-
-  /* Rounds the corners */
-  border-radius: 5px;
-
-  /* Adds padding inside the inputs */
-  padding: 8px;
-
-  /* Adds horizontal margins */
-  margin: 0px 3px;
-
-  /* Creates a smooth transition effect */
-  transition: 0.3s ease-out;
-}
-
-/* Begins a media query for screens 900px wide or smaller */
-@media (max-width: 900px) {
-
-  /* Selects form input elements */
-  form input {
-
-    /* Displays each input on its own line */
-    display: block;
-
-    /* Centers the inputs with vertical spacing */
-    margin: 15px auto;
-
-    /* Increases the padding */
-    padding: 10px;
-  }
-}
-
-/* Styles the input field when it receives focus */
-form input:focus {
-
-  /* Changes the border color */
-  border: 2px solid #ff9100;
-
-  /* Changes the text color */
-  color: black;
-
-  /* Removes the default outline */
-  outline: none;
-
-  /* Keeps the smooth transition */
-  transition: 0.3s ease-out;
-}
-
-/* Selects elements with the btn class */
-.btn {
-
-  /* Sets the background color */
-  background-color: rgb(46, 46, 46);
-
-  /* Removes the border */
-  border: none;
-
-  /* Adds a bottom border */
-  border-bottom: 3px solid rgb(77, 77, 77);
-
-  /* Rounds the button corners */
-  border-radius: 5px;
-
-  /* Applies the main font */
-  font-family: var(--main-font);
-
-  /* Sets the font size */
-  font-size: 18px;
-
-  /* Makes the text bold */
-  font-weight: bold;
-
-  /* Adds padding inside the button */
-  padding: 8px 30px 6px;
-
-  /* Centers the text */
-  text-align: center;
-
-  /* Sets the text color */
-  color: #fff;
-
-  /* Changes the mouse cursor to a pointer */
-  cursor: pointer;
-}
-
-/* Styles the button when the mouse hovers over it */
-.btn:hover {
-
-  /* Changes the background color */
-  background-color: rgb(77, 77, 77);
-
-  /* Changes the bottom border color */
-  border-bottom: 3px solid #ff9100;
-}
+</html>
